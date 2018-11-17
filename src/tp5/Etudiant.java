@@ -7,7 +7,7 @@ private char genre;
 private double moyenne;
 private Promotion formation;
 
-public Etudiant(String n,String p,long nb,char g, double m,Promotion f) {
+public Etudiant(String n,String p,long nb,char g, double m,Promotion f) {//没有static,所以其他类的变量可以直接被引用。
 	nom=n;
 	prenom=p;
 	numeroDEtudiant=nb;
