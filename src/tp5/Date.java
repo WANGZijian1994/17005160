@@ -11,18 +11,19 @@ public class Date {
 // attributs de classe
 	private int jour, mois, annee;
 	
-	public boolean CompareTo (Date d) {//Date类的对象
+	public boolean CompareTo (Date d) {//让Date类生成一个对象d，d的格式见下面的Date(j,m,a),d.annee就是访问Date里面的annee。
 		if (annee != d.annee) return true;
 		if (mois != d.mois) return true;
 		if (jour != d.jour) return true;
 		else return false;
 		}
 	/** Calcul de la date du lendemain */
+	//为了让今天的日期和2019年7月14日相一致，不一致就往上加1，数学模型incrementer.
 	public void Incrementer () {
 // Pas de taille indiquée dans la déclaration des tableaux
 	int lmois[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};//静态初始化
 // prise en compte des annees bissextiles
-	if (((annee % 4) == 0) && ((annee % 400) != 0)) lmois[1]++;
+	if (((annee % 4) == 0) && ((annee % 400) != 0)) {lmois[1]++;}
 	jour++;
 	if (jour > lmois[mois-1]) {
 		jour = 1; mois ++;
@@ -47,8 +48,8 @@ public class Date {
 	 * @param m mois
 	 * @param a année
 	 */
-	public Date(int j, int m, int a) {  
-		jour = j; mois = m; annee = a;
+	public Date(int j, int m, int a) {//这个Date类让Date类生成的对象格式都是new Date(jour,mois,annee)，Date d,对象d的格式就是（j,m,a）
+		jour = j; mois = m; annee = a;//顺序是反的。
 		}
 
 	/**
